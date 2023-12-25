@@ -5,7 +5,8 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 ## Progress
 
 Just started this awesome adventure so I'm kinda late to the party.
-1/25 ![4%]https://progress-bar.dev/4
+
+![4%](https://progress-bar.dev/4) 1/25
 
 ## Run
 
