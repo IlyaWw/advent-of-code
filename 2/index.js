@@ -32,8 +32,6 @@ const initialCubes = {
 };
 
 const answer2 = input.reduce((res, line) => {
-  const [game] = line.match(/(?<=Game )\d+/);
-
   requiredCubes = Object.keys(initialCubes).reduce(
     (acc, color) => {
       const pattern = new RegExp(`\\d+(?= ${color})`, 'g');
