@@ -1,4 +1,9 @@
-const input = require('./input');
+const fs = require('fs');
+const path = require('path');
+const input = fs
+  .readFileSync(path.resolve(__dirname, 'example.txt'))
+  .toString()
+  .split('\n');
 
 // Day two part one
 const maxPossible = {

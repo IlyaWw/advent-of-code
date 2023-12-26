@@ -13,7 +13,7 @@ Just started this awesome adventure so I'm kinda late to the party.
 Type in terminal using node:
 
 ```
-node 1
+node <day number>
 ```
 
 The script grabs input from input.js in a corresponging directory and prints calculated results to the console.
