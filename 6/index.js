@@ -26,3 +26,11 @@ const answer = times.reduce(
 );
 
 console.log(answer);
+
+// Day six part two
+const [time2, dist2] = input.map((str) =>
+  Number(str.replace(/ /g, '').split(':')[1])
+);
+const answer2 = getWinCount(time2, dist2);
+
+console.log(answer2);
