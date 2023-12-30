@@ -60,3 +60,39 @@ const hands = input
 const answer = hands.reduce((res, hand, idx) => res + hand.bid * (idx + 1), 0);
 
 console.log(answer);
+
+// Day seven part two
+cardLabels.unshift('J');
+
+const handsWithJokers = input
+  .map((str) => {
+    const [hand, bid] = str.split(' ');
+
+    const distribution = hand.split('').reduce((res, card) => {
+      if (res[card]) res[card] += 1;
+      else res[card] = 1;
+      return res;
+    }, {});
+
+    // wildcard handling
+    const jokerCount = distribution['J'] || 0;
+    distribution['J'] = 0;
+    const sortedDistribution = Object.values(distribution).sort(
+      (a, b) => b - a
+    );
+    sortedDistribution[0] += jokerCount;
+
+    return {
+      hand,
+      bid: Number(bid),
+      combos: sortedDistribution.join(''),
+    };
+  })
+  .sort(sortHands);
+
+const answer2 = handsWithJokers.reduce(
+  (res, hand, idx) => res + hand.bid * (idx + 1),
+  0
+);
+
+console.log(answer2);
