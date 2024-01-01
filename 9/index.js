@@ -20,3 +20,17 @@ const answer = input.reduce((sum, line) => {
 }, 0);
 
 console.log(answer);
+
+// Day nine part two
+const getPrev = (seq) => {
+  const diffs = getDiffs(seq);
+  prevDiff = diffs.every((num) => num === 0) ? 0 : getPrev(diffs);
+  return seq[0] - prevDiff;
+};
+
+const answer2 = input.reduce((sum, line) => {
+  const history = line.split(' ').map(Number);
+  return sum + getPrev(history);
+}, 0);
+
+console.log(answer2);
