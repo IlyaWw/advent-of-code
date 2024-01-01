@@ -28,3 +28,25 @@ while (currNode !== endNode) {
 }
 
 console.log(stepCount);
+
+// Day eight part two
+startNodes = Object.keys(network).filter((node) => node.endsWith('A'));
+
+minSteps = startNodes.map((node) => {
+  let currInstr = (stepCount = 0);
+  let currNode = node;
+
+  while (!currNode.endsWith('Z')) {
+    currNode = network[currNode][instructions[currInstr]];
+    currInstr = (currInstr + 1) % instrLen;
+    stepCount += 1;
+  }
+
+  return stepCount;
+});
+
+const gcd = (a, b) => (b == 0 ? a : gcd(b, a % b));
+const lcm = (a, b) => (a / gcd(a, b)) * b;
+const lcmAll = (ns) => ns.reduce(lcm, 1);
+
+console.log(lcmAll(minSteps));
