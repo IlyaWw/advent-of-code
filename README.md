@@ -6,7 +6,7 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 
 Just started this awesome adventure so I'm kinda late to the party.
 
-![42%](https://progress-bar.dev/42) 21/50 stars
+![44%](https://progress-bar.dev/44) 22/50 stars
 
 ## Run
 

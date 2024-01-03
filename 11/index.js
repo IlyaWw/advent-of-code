@@ -49,3 +49,29 @@ for (let i = 0; i <= galaxies.length; i++) {
 }
 
 console.log(answer);
+
+/********** Day eleven part two **********/
+
+let answer2 = 0;
+
+for (let i = 0; i <= galaxies.length; i++) {
+  for (let j = i + 1; j < galaxies.length; j++) {
+    const yDist = galaxies[j].rowIdx - galaxies[i].rowIdx;
+    const yDistExp =
+      emptyRows.filter(
+        (row) => row > galaxies[i].rowIdx && row < galaxies[j].rowIdx
+      ).length * 999999;
+
+    const xDist = Math.abs(galaxies[j].colIdx - galaxies[i].colIdx);
+    const xDistExp =
+      emptyCols.filter(
+        (col) =>
+          col > Math.min(galaxies[i].colIdx, galaxies[j].colIdx) &&
+          col < Math.max(galaxies[i].colIdx, galaxies[j].colIdx)
+      ).length * 999999;
+
+    answer2 += yDist + yDistExp + xDist + xDistExp;
+  }
+}
+
+console.log(answer2);
