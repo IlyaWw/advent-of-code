@@ -6,21 +6,36 @@ const input = fs
   .split('\n');
 
 /********** Day one part one **********/
-const aList = [],
-  bList = [];
+
+const leftList = [],
+  rightList = [];
 
 input.forEach((row) => {
-  const [a, b] = row.split('   ');
-  aList.push(Number(a));
-  bList.push(Number(b));
+  const [left, right] = row.split('   ');
+  leftList.push(Number(left));
+  rightList.push(Number(right));
 });
 
-aList.sort();
-bList.sort();
+leftList.sort();
+rightList.sort();
 
-const answer = aList.reduce(
-  (acc, cur, idx) => acc + Math.abs(cur - bList[idx]),
+const answer = leftList.reduce(
+  (acc, cur, idx) => acc + Math.abs(cur - rightList[idx]),
   0
 );
 
 console.log(answer);
+
+/********** Day one part two **********/
+
+const similarityObj = rightList.reduce((acc, cur) => {
+  acc[cur] = (acc[cur] || 0) + 1;
+  return acc;
+}, {});
+
+const answer2 = leftList.reduce(
+  (acc, cur) => acc + cur * (similarityObj[cur] || 0),
+  0
+);
+
+console.log(answer2);
