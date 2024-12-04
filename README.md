@@ -6,7 +6,7 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 
 2023: ![](https://geps.dev/progress/46) 23/50 stars
 
-2024: ![](https://geps.dev/progress/8) 4/50 stars
+2024: ![](https://geps.dev/progress/10) 5/50 stars
 
 ## Run
 
