@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const input = fs.readFileSync(path.resolve(__dirname, 'input.txt')).toString();
 
+/********** Day four part one **********/
+
 const countXmasMatches = (str) =>
   Array.from(str.matchAll(/(?=(XMAS|SAMX))/g)).length;
 
@@ -63,3 +65,25 @@ const xmasDiagReversed = countXmasMatches(getPivot135(input));
 
 const answer = xmasVert + xmasHor + xmasDiag + xmasDiagReversed;
 console.log(answer);
+
+/********** Day four part two **********/
+
+const lettersMatrix = input.split('\n').map((row) => row.split(''));
+
+let answer2 = 0;
+
+for (let i = 1; i < lettersMatrix.length - 1; i++) {
+  for (let j = 1; j < lettersMatrix[i].length - 1; j++) {
+    if (lettersMatrix[i][j] === 'A') {
+      const xCross =
+        lettersMatrix[i - 1][j - 1] +
+        lettersMatrix[i + 1][j + 1] +
+        lettersMatrix[i + 1][j - 1] +
+        lettersMatrix[i - 1][j + 1];
+
+      if ((xCross.match(/MS|SM/g) || []).length === 2) answer2++;
+    }
+  }
+}
+
+console.log(answer2);
