@@ -5,6 +5,8 @@ const input = fs
   .toString()
   .split('\n');
 
+/********** Day eight part one **********/
+
 const nodesObj = {};
 
 input.forEach((row, y) =>
@@ -47,3 +49,29 @@ const answer = Object.values(antinodesObj).reduce(
 );
 
 console.log(answer);
+
+/********** Day eight part two **********/
+
+const board = input.map((row) => row.split(''));
+
+const drawAntinode = (x, y, dx, dy) => {
+  if (board[y]?.[x]) {
+    board[y][x] = '#';
+    drawAntinode(x + dx, y + dy, dx, dy);
+  }
+};
+
+Object.values(nodesObj).forEach((nodes) => {
+  for (let i = 0; i < nodes.length - 1; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      drawAntinode(nodes[i].x, nodes[i].y, dx, dy);
+      drawAntinode(nodes[j].x, nodes[j].y, -dx, -dy);
+    }
+  }
+});
+
+const answer2 = board.flat().filter((cell) => cell !== '.').length;
+
+console.log(answer2);

@@ -42,6 +42,6 @@ const calculate = (operatorsEnum) => {
 
 console.log(calculate(['+', '*']));
 
-/********** Day sevel part two **********/
+/********** Day seven part two **********/
 
 console.log(calculate(['+', '*', '']));
