@@ -6,7 +6,7 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 
 [2023](2023/README.md): ![](https://geps.dev/progress/46) 23/50 ⭐
 
-[2024](2024/README.md): ![](https://geps.dev/progress/34) 17/50 ⭐
+[2024](2024/README.md): ![](https://geps.dev/progress/36) 18/50 ⭐
 
 ## Run
 
