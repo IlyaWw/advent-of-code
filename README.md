@@ -8,6 +8,8 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 
 [2024](2024/README.md): ![](https://geps.dev/progress/42) 21/50 ⭐
 
+[2025](2025/README.md): ![](https://geps.dev/progress/4) 1/24 ⭐
+
 ## Run
 
 Place `input.txt` with your puzzle input into a corresponding directory.
