@@ -8,7 +8,7 @@ My take on [Advent of Code](https://adventofcode.com/) using JS
 
 [2024](2024/README.md): ![](https://geps.dev/progress/42) 21/50 ⭐
 
-[2025](2025/README.md): ![](https://geps.dev/progress/17) 4/24 ⭐
+[2025](2025/README.md): ![](https://geps.dev/progress/21) 5/24 ⭐
 
 ## Run
 
